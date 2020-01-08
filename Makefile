@@ -1,6 +1,6 @@
 BUILD_DIR=build
-COMMON_FLAGS=-std=c++11 -Wall -o build/o
-DEBUG_FLAGS=-O0 -ggdb -fsanitize=address -fno-omit-frame-pointer -DDEBUG_BUILD=1 -pthread
+COMMON_FLAGS=-std=c++11 -Wall -Wno-unused-result -pthread -o build/o 
+DEBUG_FLAGS=-O0 -ggdb
 RELEASE_FLAGS=-Werror -O3
 UNITS=main.cpp
 

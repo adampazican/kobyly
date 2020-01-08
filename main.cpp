@@ -57,7 +57,6 @@ void* start_nurse_routine(void* thread_data)
         if(*data->number_of_cribs == 0)
         {
             printf("osetrovatel: valov prazdny, naplnam\n");
-            printf("osetrovatel: zacal som \n");
             *data->number_of_cribs = max_number_of_cribs;
             pthread_cond_broadcast(data->refilled);
             pthread_mutex_unlock(data->mutex);
@@ -143,7 +142,14 @@ int main()
         }
         else if (option == 3)
         {
-            printf("HELP"); //TODO: 
+            printf("\e[1;1H\e[2J");
+            printf("HELP\n");
+            printf("Program na simulaciu synchronizacneho problemu s kobylami.\n");
+            printf("Pre zaciatok simulacie vyberte v menu moznost Zacat simulaciu.\n");
+            printf("Pri zaciatku musite vybrat pocet krav a pocet valovov.\n");
+            printf("Pre koniec beziacej simulacie musite napisat prikaz exit.\n");
+            printf("Pre koniec programu vyberte moznost Skoncit. \n");
+            printf("Pre zobrazenie tejto napovedy vyberte moznost Pomoc.\n");
         }
         else{
             printf("Neplatna operacia");
